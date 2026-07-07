@@ -3,24 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Viewer</title>
+    <title>日本語能力試験 読解練習</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<h1>日本語能力試験 読解練習</h1>
 
-<h1>HTML Viewer</h1>
+<div id="toolbar">
+    <button id="toggle">☰</button>
+    <button id="zoomOut">A−</button>
+    <button id="zoomIn">A+</button>
+    <button id="yomitanHelp">📖 Yomitan</button>
+    <input
+        id="search"
+        type="text"
+        placeholder="Search articles...">
+</div>
 
 <div id="container">
 
-    <div id="menu">
-        Loading...
-    </div>
+    <div id="menu"></div>
 
     <iframe id="viewer"></iframe>
 
 </div>
+<div id="yomitanModal" class="modal">
 
+    <div class="modalContent">
+
+        <button id="closeYomitan" class="close">
+            ✕
+        </button>
+
+        <h2>Yomitanの使い方</h2>
+
+        <p>
+            Yomitanを使うと、記事を読みながら日本語の単語の意味や読み方を調べることができます。
+        </p>
+
+        <h3>準備</h3>
+
+        <ol>
+            <li>ブラウザにYomitanをインストールします。</li>
+            <li>日本語辞書（Japanese → Englishなど）を追加します。</li>
+            <li>記事の単語にマウスを合わせると意味が表示されます。</li>
+        </ol>
+
+        <h3>おすすめ設定</h3>
+
+        <ul>
+            <li>ポップアップ表示を有効にする</li>
+            <li>日本語辞書を優先する</li>
+            <li>例文表示を有効にする</li>
+        </ul>
+
+        <p>
+            分からない単語をクリックして、Ankiなどに登録すると復習できます。
+        </p>
+
+    </div>
+
+</div>
 <script src="app.js"></script>
 
 </body>
