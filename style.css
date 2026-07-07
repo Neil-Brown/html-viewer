@@ -1,1 +1,29 @@
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin: 0;
+    padding: 15px;
+    background: #333;
+    color: white;
+}
+
+#container {
+    display: flex;
+    height: calc(100vh - 60px);
+}
+
+#menu {
+    width: 250px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+#viewer {
+    flex: 1;
+    border: none;
+}
