@@ -4,6 +4,9 @@
 
 A lightweight web application for practicing **JLPT reading comprehension** with authentic Japanese news articles.
 
+Demo:
+https://neil-brown.github.io/jlpt-reading-trainer/
+
 The goal of this project is to provide a clean, distraction-free reading environment where learners can improve their Japanese through extensive reading.
 
 ---
