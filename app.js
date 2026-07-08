@@ -24,7 +24,11 @@ async function getTitle(file) {
 
     const doc = new DOMParser().parseFromString(html, "text/html");
 
-    return doc.title || file;
+    return (
+        doc.getElementById("articleTitle")?.textContent.trim() ||
+        doc.title ||
+        file
+    );
 }
 
 async function loadMenu() {
@@ -102,6 +106,11 @@ function applyZoom() {
             font-family: inherit;
             font-size: 1rem;
             line-height: 1.8;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         @media (max-width: 600px) {
@@ -164,4 +173,19 @@ window.onclick = (event) => {
     }
 };
 
+document.addEventListener("keydown", (event) => {
+    if (!event.ctrlKey) return;
+
+    if (event.key === "ArrowUp") {
+        event.preventDefault();
+        zoom = Math.min(300, zoom + 10);
+        applyZoom();
+    }
+
+    if (event.key === "ArrowDown") {
+        event.preventDefault();
+        zoom = Math.max(50, zoom - 10);
+        applyZoom();
+    }
+});
 loadMenu();
